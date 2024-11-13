@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> BLOGGY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/script.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQC9D7D87X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZQC9D7D87X');
+</script>
+
+    <!-- Ionicons -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@6.0.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@6.0.0/dist/ionicons/ionicons.js"></script>
+
+</head>
+<body>
+    
+<!-- Header Section -->
+
+<header  class="header section bg-white shadow-lg py-4" data-header>
+    <div class="container mx-auto flex items-center justify-between px-6">
+  
+      <!-- Logo -->
+      <a href="#" class="logo flex items-center">
+        <img src="../assets/images/logo.svg" width="129" height="40" alt="Blogy logo">
+      </a>
+  
+      <!-- Navbar -->
+      <nav  class="navbar hidden md:flex space-x-8" data-navbar >
+        <ul class="navbar-list flex space-x-6">
+          <li class="navbar-item">
+            <a href="#" class="navbar-link text-gray-700 hover:text-blue-600 hover:underline" data-nav-link>Home</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#recents" class="navbar-link text-gray-700 hover:text-blue-600 hover:underline" data-nav-link>Recent Post</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#" class="navbar-link text-gray-700 hover:text-blue-600 hover:underline" data-nav-link>Membership</a>
+          </li>
+        </ul>
+      </nav>
+  
+      <!-- Action Buttons -->
+      <div class="wrapper flex items-center space-x-4">
+  
+        <!-- Search Button -->
+        <button class="search-btn flex items-center text-gray-700 hover:text-blue-600 transition-colors" aria-label="search" data-search-toggler>
+          <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+          <span class="span ml-2">Search</span>
+        </button>
+  
+        <!-- Mobile Menu Toggle Button -->
+        <button class="nav-toggle-btn flex flex-col items-center justify-center md:hidden" aria-label="toggle menu" data-nav-toggler>
+          <span class="block w-6 h-0.5 bg-gray-700 my-1 transition-all duration-300"></span>
+          <span class="block w-6 h-0.5 bg-gray-700 my-1 transition-all duration-300"></span>
+          <span class="block w-6 h-0.5 bg-gray-700 my-1 transition-all duration-300"></span>
+        </button>
+  
+        <!-- Join Button -->
+        <a href="#" class="btn px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">Join</a>
+  
+      </div>
+  
+    </div>
+  </header>
+  
+  <!-- Search Bar Section -->
+
+  <div class="search-bar fixed inset-0 bg-white shadow-lg transform translate-y-full transition-transform duration-300 ease-out z-50" data-search-bar>
+
+    <div class="input-wrapper flex items-center justify-between p-4">
+      <input type="search" name="search" placeholder="Search" class="input-field w-full py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-600">
+      
+      <button class="search-close-btn text-gray-600 ml-4" aria-label="close search bar" data-search-toggler>
+        <ion-icon name="close-outline" aria-hidden="true" size="large"></ion-icon>
+      </button>
+    </div>
+  
+    <p class="search-bar-text text-gray-500 text-sm text-center mt-2">Please enter at least 3 characters</p>
+  
+  </div>
+  
+  <!-- Overlay Background -->
+  <div class="overlay fixed inset-0 bg-black bg-opacity-50 hidden z-40" data-overlay data-search-toggler></div>
+  
+  
+<!-- Hero Section -->
+<section class="section hero bg-white py-16" aria-label="home">
+  <div class="container mx-auto text-center px-4">
+    
+    <!-- Title -->
+    <h1 class="text-5xl font-bold text-gray-800 mb-6">
+      <strong class="text-blue-600">Hey, we’re Blogy.</strong> See our thoughts, stories and ideas.
+    </h1>
+
+    <!-- Newsletter Form Wrapper -->
+    <div class="wrapper max-w-lg mx-auto">
+      
+      <!-- Newsletter Form -->
+      <form action="" class="newsletter-form flex items-center border border-gray-300 rounded-lg overflow-hidden mb-4">
+        <input 
+          type="email" 
+          name="email_address" 
+          placeholder="Your email address" 
+          class="email-field w-full px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none"
+          required
+        >
+        <button 
+          type="submit" 
+          class="btn bg-blue-600 text-white px-6 py-3 font-semibold hover:bg-blue-700 transition duration-300"
+        >
+          Subscribe
+        </button>
+      </form>
+
+      <!-- Newsletter Text -->
+      <p class="newsletter-text text-gray-500 text-sm">
+        Get the email newsletter and unlock access to members-only content and updates
+      </p>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Featured Post Section -->
+<section class="section featured bg-white py-16" aria-label="featured post" >
+  <div class="container mx-auto px-4">
+    
+    <!-- Section Subtitle -->
+    <p class="text-lg font-semibold text-gray-700 text-center mb-8">
+      Get started with our <strong class="text-blue-600">best stories</strong>
+    </p>
+
+    <!-- Featured Posts Scrollable List -->
+    <ul class="flex space-x-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide has-scrollbar" id="featured-scroll">
+      
+      <!-- Featured Post Card 1 -->
+      <li class="min-w-[300px] max-w-[300px] snap-start bg-gray-100 rounded-lg shadow-md">
+        <div class="blog-card overflow-hidden">
+          <figure class="relative">
+            <img src="./assets/images/featured-1.jpg" alt="New technology" class="w-full h-[200px] object-cover">
+          </figure>
+          <div class="p-4">
+            <ul class="flex space-x-2 text-xs text-blue-600 mb-2">
+              <li><a href="#" class="hover:underline">Design</a></li>
+              <li><a href="#" class="hover:underline">Idea</a></li>
+            </ul>
+            <h3 class="text-lg font-semibold mb-2">
+              <a href="#" class="hover:underline">New technology is not good or evil in itself</a>
+            </h3>
+            <p class="text-sm text-gray-600">Vestibulum vehicula dui venenatis neque tempor...</p>
+          </div>
+        </div>
+      </li>
+
+      <!-- Featured Post Card 2 -->
+      <li class="min-w-[300px] max-w-[300px] snap-start bg-gray-100 rounded-lg shadow-md">
+        <div class="blog-card overflow-hidden">
+          <figure class="relative">
+            <img src="./assets/images/featured-1.jpg" alt="New technology" class="w-full h-[200px] object-cover">
+          </figure>
+          <div class="p-4">
+            <ul class="flex space-x-2 text-xs text-blue-600 mb-2">
+              <li><a href="#" class="hover:underline">Creative</a></li>
+              <li><a href="#" class="hover:underline">Product</a></li>
+            </ul>
+            <h3 class="text-lg font-semibold mb-2">
+              <a href="#" class="hover:underline">It’s a new era in design, there are no rules</a>
+            </h3>
+            <p class="text-sm text-gray-600">Quibus autem in rebus tanta obscuratio non fit...</p>
+          </div>
+        </div>
+      </li>
+
+      <!-- Featured Post Card 3 -->
+      <li class="min-w-[300px] max-w-[300px] snap-start bg-gray-100 rounded-lg shadow-md">
+        <div class="blog-card overflow-hidden">
+          <figure class="relative">
+            <img src="./assets/images/featured-1.jpg" alt="New technology" class="w-full h-[200px] object-cover">
+          </figure>
+          <div class="p-4">
+            <ul class="flex space-x-2 text-xs text-blue-600 mb-2">
+              <li><a href="#" class="hover:underline">Design</a></li>
+              <li><a href="#" class="hover:underline">Creative</a></li>
+            </ul>
+            <h3 class="text-lg font-semibold mb-2">
+              <a href="#" class="hover:underline">Perfection has to do with the end product</a>
+            </h3>
+            <p class="text-sm text-gray-600">Aenean eget urna aliquet, viverra orci quis...</p>
+          </div>
+        </div>
+      </li>
+
+      <!-- Featured Post Card 4 -->
+      <li class="min-w-[300px] max-w-[300px] snap-start bg-gray-100 rounded-lg shadow-md">
+        <div class="blog-card overflow-hidden">
+          <figure class="relative">
+            <img src="./assets/images/featured-1.jpg" alt="New technology" class="w-full h-[200px] object-cover">
+          </figure>
+          <div class="p-4">
+            <ul class="flex space-x-2 text-xs text-blue-600 mb-2">
+              <li><a href="#" class="hover:underline">People</a></li>
+              <li><a href="#" class="hover:underline">Story</a></li>
+            </ul>
+            <h3 class="text-lg font-semibold mb-2">
+              <a href="#" class="hover:underline">Everyone has a different life story</a>
+            </h3>
+            <p class="text-sm text-gray-600">Non est igitur summum malum dolor. Tu autem inter...</p>
+          </div>
+        </div>
+      </li>
+
+      <!-- Featured Post Card 5 -->
+      <li class="min-w-[300px] max-w-[300px] snap-start bg-gray-100 rounded-lg shadow-md">
+        <div class="blog-card overflow-hidden">
+          <figure class="relative">
+            <img src="./assets/images/featured-1.jpg" alt="New technology" class="w-full h-[200px] object-cover">
+          </figure>
+          <div class="p-4">
+            <ul class="flex space-x-2 text-xs text-blue-600 mb-2">
+              <li><a href="#" class="hover:underline">People</a></li>
+              <li><a href="#" class="hover:underline">Story</a></li>
+            </ul>
+            <h3 class="text-lg font-semibold mb-2">
+              <a href="#" class="hover:underline">Everyone has a different life story</a>
+            </h3>
+            <p class="text-sm text-gray-600">Non est igitur summum malum dolor. Tu autem inter...</p>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+
+
+<!-- RECENT POSTS -->
+<section class="section recent py-20" id="recents" aria-label="recent post">
+  <div class="container mx-auto px-4">
+
+    <!-- Title Section -->
+    <div class="title-wrapper flex flex-col md:flex-row justify-between items-center mb-12">
+      <h2 class="h2 text-3xl md:text-4xl font-semibold text-gray-800">
+        See what we’ve <strong class="text-blue-500">written lately</strong>
+      </h2>
+    </div>
+
+    <!-- Recent Blog Posts Grid -->
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Blog Card 1 -->
+      <li class="blog-card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+        <figure class="card-banner relative">
+          <img src="./assets/images/recent-1.jpg" alt="Creating is a privilege but it’s also a gift" class="w-full h-64 object-cover">
+        </figure>
+        <div class="card-content p-6">
+          <ul class="card-meta-list flex space-x-3 text-sm mb-4">
+            <li><a href="#" class="text-blue-500">Lifestyle</a></li>
+            <li><a href="#" class="text-blue-500">People</a></li>
+            <li><a href="#" class="text-blue-500">Review</a></li>
+          </ul>
+          <h3 class="h4 text-xl font-semibold hover:text-blue-500">
+            <a href="#" class="hover:underline">Creating is a privilege but it’s also a gift</a>
+          </h3>
+          <p class="card-text text-gray-700 mt-3">
+            Nullam vel lectus vel velit pellentesque dignissim nec id magna. Cras molestie ornare quam at semper. Proin a ipsum ex.
+          </p>
+        </div>
+      </li>
+
+      <!-- Blog Card 2 -->
+      <li class="blog-card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+        <figure class="card-banner relative">
+          <img src="./assets/images/recent-2.jpg" alt="Being unique is better than being perfect" class="w-full h-64 object-cover">
+        </figure>
+        <div class="card-content p-6">
+          <ul class="card-meta-list flex space-x-3 text-sm mb-4">
+            <li><a href="#" class="text-blue-500">Design</a></li>
+            <li><a href="#" class="text-blue-500">Product</a></li>
+            <li><a href="#" class="text-blue-500">Idea</a></li>
+          </ul>
+          <h3 class="h4 text-xl font-semibold hover:text-blue-500">
+            <a href="#" class="hover:underline">Being unique is better than being perfect</a>
+          </h3>
+          <p class="card-text text-gray-700 mt-3">
+            Nam in pretium dui. Phasellus dapibus, mi at molestie cursus, neque eros aliquet nisi, non efficitur nisi est nec mi.
+          </p>
+        </div>
+      </li>
+
+      <!-- Blog Card 3 -->
+      <li class="blog-card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+        <figure class="card-banner relative">
+          <img src="./assets/images/recent-3.jpg" alt="Now we’re getting somewhere" class="w-full h-64 object-cover">
+        </figure>
+        <div class="card-content p-6">
+          <ul class="card-meta-list flex space-x-3 text-sm mb-4">
+            <li><a href="#" class="text-blue-500">Idea</a></li>
+            <li><a href="#" class="text-blue-500">Product</a></li>
+            <li><a href="#" class="text-blue-500">Review</a></li>
+          </ul>
+          <h3 class="h4 text-xl font-semibold hover:text-blue-500">
+            <a href="#" class="hover:underline">Now we’re getting somewhere</a>
+          </h3>
+          <p class="card-text text-gray-700 mt-3">
+            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec volutpat rhoncus quam.
+          </p>
+        </div>
+      </li>
+
+      <!-- Blog Card 4 -->
+      <li class="blog-card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+        <figure class="card-banner relative">
+          <img src="./assets/images/recent-4.jpg" alt="The trick to getting more done is to have the freedom to roam around" class="w-full h-64 object-cover">
+        </figure>
+        <div class="card-content p-6">
+          <ul class="card-meta-list flex space-x-3 text-sm mb-4">
+            <li><a href="#" class="text-blue-500">Travel</a></li>
+            <li><a href="#" class="text-blue-500">People</a></li>
+            <li><a href="#" class="text-blue-500">Health</a></li>
+          </ul>
+          <h3 class="h4 text-xl font-semibold hover:text-blue-500">
+            <a href="#" class="hover:underline">The trick to getting more done is to have the freedom to roam around</a>
+          </h3>
+          <p class="card-text text-gray-700 mt-3">
+            In magna lorem, fringilla et nisi vel, convallis hendrerit turpis. Pellentesque nec dui odio. Nulla at convallis ante.
+          </p>
+        </div>
+      </li>
+      
+      <!-- Blog Card 5 -->
+      <li class="blog-card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+        <figure class="card-banner relative">
+          <img src="./assets/images/recent-4.jpg" alt="The trick to getting more done is to have the freedom to roam around" class="w-full h-64 object-cover">
+        </figure>
+        <div class="card-content p-6">
+          <ul class="card-meta-list flex space-x-3 text-sm mb-4">
+            <li><a href="#" class="text-blue-500">Travel</a></li>
+            <li><a href="#" class="text-blue-500">People</a></li>
+            <li><a href="#" class="text-blue-500">Health</a></li>
+          </ul>
+          <h3 class="h4 text-xl font-semibold hover:text-blue-500">
+            <a href="#" class="hover:underline">The trick to getting more done is to have the freedom to roam around</a>
+          </h3>
+          <p class="card-text text-gray-700 mt-3">
+            In magna lorem, fringilla et nisi vel, convallis hendrerit turpis. Pellentesque nec dui odio. Nulla at convallis ante.
+          </p>
+        </div>
+      </li>
+
+      <!-- Blog Card 6 -->
+      <li class="blog-card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+        <figure class="card-banner relative">
+          <img src="./assets/images/recent-4.jpg" alt="The trick to getting more done is to have the freedom to roam around" class="w-full h-64 object-cover">
+        </figure>
+        <div class="card-content p-6">
+          <ul class="card-meta-list flex space-x-3 text-sm mb-4">
+            <li><a href="#" class="text-blue-500">Travel</a></li>
+            <li><a href="#" class="text-blue-500">People</a></li>
+            <li><a href="#" class="text-blue-500">Health</a></li>
+          </ul>
+          <h3 class="h4 text-xl font-semibold hover:text-blue-500">
+            <a href="#" class="hover:underline">The trick to getting more done is to have the freedom to roam around</a>
+          </h3>
+          <p class="card-text text-gray-700 mt-3">
+            In magna lorem, fringilla et nisi vel, convallis hendrerit turpis. Pellentesque nec dui odio. Nulla at convallis ante.
+          </p>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+
+<!-- RECOMMENDED POSTS -->
+<section class="section recommended py-12" aria-label="recommended post">
+  <div class="container mx-auto px-4">
+    
+    <!-- Section Title -->
+    <p class="section-subtitle text-xl font-semibold text-gray-800 mb-6">
+      <strong class="text-blue-500">Recommended</strong>
+    </p>
+
+    <!-- Recommended Posts Horizontal Row -->
+    <ul class="flex space-x-6 overflow-x-auto has-scrollbar">
+
+      <!-- Blog Card 1 -->
+      <li class="flex-shrink-0 w-64">
+        <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+          <figure class="card-banner relative w-full h-40">
+            <img src="./assets/images/recommended-2.jpg" alt="The power of consistency and persistence" class="img-cover w-full h-full object-cover">
+          </figure>
+          <div class="card-content p-4">
+            <h3 class="h5 text-lg font-semibold hover:text-blue-500">
+              <a href="#" class="card-title hover:underline">
+                The power of consistency and persistence
+              </a>
+            </h3>
+          </div>
+        </div>
+      </li>
+
+      <!-- Blog Card 2 -->
+      <li class="flex-shrink-0 w-64">
+        <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+          <figure class="card-banner relative w-full h-40">
+            <img src="./assets/images/recommended-3.jpg" alt="Breaking through the barriers of doubt" class="img-cover w-full h-full object-cover">
+          </figure>
+          <div class="card-content p-4">
+            <h3 class="h5 text-lg font-semibold hover:text-blue-500">
+              <a href="#" class="card-title hover:underline">
+                Breaking through the barriers of doubt
+              </a>
+            </h3>
+          </div>
+        </div>
+      </li>
+
+      <!-- Blog Card 3 -->
+      <li class="flex-shrink-0 w-64">
+        <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+          <figure class="card-banner relative w-full h-40">
+            <img src="./assets/images/recommended-4.jpg" alt="Finding inspiration in the everyday" class="img-cover w-full h-full object-cover">
+          </figure>
+          <div class="card-content p-4">
+            <h3 class="h5 text-lg font-semibold hover:text-blue-500">
+              <a href="#" class="card-title hover:underline">
+                Finding inspiration in the everyday
+              </a>
+            </h3>
+          </div>
+        </div>
+      </li>
+
+      <!-- Blog Card 4 -->
+      <li class="flex-shrink-0 w-64">
+        <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+          <figure class="card-banner relative w-full h-40">
+            <img src="./assets/images/recommended-5.jpg" alt="The art of effective communication" class="img-cover w-full h-full object-cover">
+          </figure>
+          <div class="card-content p-4">
+            <h3 class="h5 text-lg font-semibold hover:text-blue-500">
+              <a href="#" class="card-title hover:underline">
+                The art of effective communication
+              </a>
+            </h3>
+          </div>
+        </div>
+      </li>
+
+      <!-- Blog Card 5 -->
+      <li class="flex-shrink-0 w-64">
+        <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+          <figure class="card-banner relative w-full h-40">
+            <img src="./assets/images/recommended-6.jpg" alt="Embracing challenges as opportunities" class="img-cover w-full h-full object-cover">
+          </figure>
+          <div class="card-content p-4">
+            <h3 class="h5 text-lg font-semibold hover:text-blue-500">
+              <a href="#" class="card-title hover:underline">
+                Embracing challenges as opportunities
+              </a>
+            </h3>
+          </div>
+        </div>
+      </li>
+
+      <!-- Blog Card 6 -->
+      <li class="flex-shrink-0 w-64">
+        <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+          <figure class="card-banner relative w-full h-40">
+            <img src="./assets/images/recommended-7.jpg" alt="Mastering time management" class="img-cover w-full h-full object-cover">
+          </figure>
+          <div class="card-content p-4">
+            <h3 class="h5 text-lg font-semibold hover:text-blue-500">
+              <a href="#" class="card-title hover:underline">
+                Mastering time management
+              </a>
+            </h3>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer  text-black py-12">
+  <div class="container mx-auto px-4">
+
+    <!-- Footer Top Section -->
+    <div class="footer-top flex flex-col sm:flex-row justify-between items-start mb-8">
+
+      <!-- Logo and Description -->
+      <div class="footer-brand mb-6 sm:mb-0">
+        <a href="#" class="logo">
+          <img src="./assets/images/logo.svg" width="129" height="40" alt="Blogy logo" class="mb-4">
+        </a>
+        <p class="footer-text text-gray-400 text-sm">
+          A minimal, functional theme for running a paid-membership publication on Ghost.
+        </p>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="footer-links flex flex-col sm:flex-row space-y-6 sm:space-y-0 sm:space-x-12">
+        
+        <!-- Social Links -->
+        <div>
+          <p class="text-lg font-semibold text-black mb-3">Follow Us</p>
+          <ul class="flex space-x-6">
+            <li>
+              <a href="#" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">
+                <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-blue-400 transition-colors duration-300">
+                <ion-icon name="logo-twitter" class="text-2xl"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-red-500 transition-colors duration-300">
+                <ion-icon name="logo-pinterest" class="text-2xl"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">
+                <ion-icon name="logo-vimeo" class="text-2xl"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+
+        <!-- About Links -->
+        <div>
+          <p class="h5 text-lg font-semibold text-black mb-3">About</p>
+          <ul>
+            <li><a href="#" class="footer-link hover:underline text-gray-800">Contact</a></li>
+            <li><a href="#" class="footer-link hover:underline text-gray-800">Features</a></li>
+            <li><a href="#" class="footer-link hover:underline text-gray-800">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Features Links -->
+        <div>
+          <p class="h5 text-lg font-semibold text-black mb-3">Features</p>
+          <ul>
+            <li><a href="#" class="footer-link hover:underline text-gray-800">Upcoming Articles</a></li>
+            <li><a href="#" class="footer-link hover:underline text-gray-800">Blog & News</a></li>
+            <li><a href="#" class="footer-link hover:underline text-gray-800">FAQ</a></li>
+          </ul>
+        </div>
+        
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom Section -->
+    <div class="footer-bottom text-center">
+      <p class="copyright text-gray-900 text-sm">
+        &copy; Blogy 2024. 
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+
+</body>
+</html>

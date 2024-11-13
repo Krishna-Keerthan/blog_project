@@ -1,0 +1,81 @@
+/* Search Bar Styling */
+.search-bar {
+    display: none;
+    max-width: 600px;
+    margin: 0 auto;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+  }
+  
+  /* Search Bar Show State */
+  .search-bar.active {
+    display: block;
+    transform: translateY(0);
+  }
+  
+  /* Overlay Styling */
+  .overlay.active {
+    display: block;
+  }
+  
+  /* Search Input Field Styling */
+  .input-field {
+    width: 100%;
+    border: 1px solid #e5e7eb;
+    padding: 0.75rem;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .input-field:focus {
+    border-color: #1d4ed8; /* Adjust to match your theme color */
+  }
+  
+  /* Close Button */
+  .search-close-btn ion-icon {
+    font-size: 1.5rem;
+    color: #6b7280; /* Gray color */
+    cursor: pointer;
+  }
+  
+
+
+/* Container styling to activate scrolling and add padding for gap */
+.has-scrollbar {
+  max-height: 80vh; /* Adjust based on your desired height */
+  overflow-y: auto;
+  padding-right: 16px; /* Space between scrollbar and content */
+  margin-right: -16px; /* Ensure the scrollbar doesn't shift content */
+}
+
+/* Custom scrollbar styling for Webkit browsers (Chrome, Safari) */
+.has-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Narrow scrollbar for a modern feel */
+}
+
+.has-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Invisible track for floating effect */
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #b0bec5; /* Subtle gray color */
+  border-radius: 10px;
+  border: 2px solid transparent; /* Gap between scrollbar thumb and track */
+  background-clip: padding-box; /* Ensures border shows as gap */
+}
+
+/* Hover effect on scrollbar thumb */
+.has-scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: #78909c; /* Darker on hover for subtle emphasis */
+  transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+/* Firefox styling */
+.has-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #b0bec5 transparent;
+}
+
+
